@@ -5,4 +5,7 @@ export default class BinaryTree<T>{
     constructor(value: T) {
         this.value = value;
     }
+    toString(): string {
+        return this.value?.toString() || "";
+    }
 }

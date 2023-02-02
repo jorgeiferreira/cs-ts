@@ -28,12 +28,14 @@ export default class Queue<T> {
         if (currentLink) {
             currentLink.Next = undefined;
             this.length--;
-            this.tail = this.head?.Next;
         }
+        if (this.length <= 0) {
+            this.tail = undefined;
+        }
+
         return currentLink?.value;
 
     }
-
     peek(): T | undefined {
         return this.head?.value;
     }
